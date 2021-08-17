@@ -2,7 +2,6 @@
 
 A ideia desse projeto é colocarmos em prática todo conhecimento adiquirido no decorrer do curso Técnico de Desenvolvimento de Sistemas - SENAI, para isso vamos criar um sistema para representar a modelagem abaixo:
 
-image
 Nesse cenário teremos:
 
     Turmas
@@ -10,21 +9,22 @@ Nesse cenário teremos:
     Avaliações
     Respostas
 
-A especificação de cada tarefa está aqui
+A especificação de cada tarefa está aqui:
 
-https://trello.com/b/yWXMj39s/dojo-bootcamp
+https://trello.com/b/ghB8elJx/squad-fenix-taiff
+
 Para garantir que quando chegar o seu momento você tenha o código pronto para codificar, siga os passos abaixo:
 1. Clonar o repositório para sua máquina
 
-$ git clone https://github.com/zup-academy/dojo-ot6-grupo-08
+$ git clone https://github.com/EdyLucas/squadFenix
 
 2. Baixar as alterações que foram feitas pelo seu colega anteriormente
 
  1. Acessar o diretório do projeto:  
 
-$ cd dojo-ot6-grupo-08
+$ cd squadFenix
 
-   2. Baixar as alterações do github      
+ 2. Baixar as alterações do github      
 
 $ git pull origin main
 
@@ -32,7 +32,7 @@ $ git pull origin main
 
  1. Acessar o diretório do projeto:  
 
-$ cd dojo-ot6-grupo-08
+$ cd squadFenix
 
  2. Adicionar as alterações feitas no projeto  
 
