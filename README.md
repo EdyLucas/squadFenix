@@ -1,6 +1,6 @@
-# Squad Fenix - Projeto TAIFF
+# Squad Fenix - Projeto SENAI-TAIFF
 
-A ideia desse projeto é colocarmos em prática,  o problema que teremos que resolver já é conhecido nosso que foi para simular o processo que vocês tem aqui no bootcamp de respostas de formulário, para isso vamos criar um sistema para representar a modelagem abaixo:
+A ideia desse projeto é colocarmos em prática todo conhecimento adiquirido no decorrer do curso Técnico de Desenvolvimento de Sistemas - SENAI, para isso vamos criar um sistema para representar a modelagem abaixo:
 
 image
 Nesse cenário teremos:
