@@ -4,10 +4,6 @@ A ideia desse projeto é colocarmos em prática todo conhecimento adiquirido no 
 
 Nesse cenário teremos:
 
-    Turmas
-    Alunos
-    Avaliações
-    Respostas
 
 A especificação de cada tarefa está aqui:
 
