@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5344925c-ffc7-450b-8d45-04ab59718ab4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mesadeteste.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/taiff/mesadeteste/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/taiff/mesadeteste/ProdutoRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/taiff/mesadeteste/controller/ProdutoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/taiff/mesadeteste/dto/NovoProdutoRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/taiff/mesadeteste/model/Produto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/taiff/mesadeteste/ApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/taiff/mesadeteste/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/taiff/mesadeteste/ProdutoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/taiff/mesadeteste/controller/ProdutoController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/taiff/mesadeteste/dto/NovoProdutoRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/taiff/mesadeteste/model/Produto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/br/com/taiff/mesadeteste/ApplicationTests.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +20,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
