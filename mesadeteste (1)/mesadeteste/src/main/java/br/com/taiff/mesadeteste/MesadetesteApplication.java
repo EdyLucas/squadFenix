@@ -9,5 +9,4 @@ public class MesadetesteApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MesadetesteApplication.class, args);
 	}
-
 }
