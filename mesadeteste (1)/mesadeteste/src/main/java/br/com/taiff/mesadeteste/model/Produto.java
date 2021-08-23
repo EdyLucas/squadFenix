@@ -20,4 +20,8 @@ public class Produto {
         this.nome = nome;
         this.modelo = modelo;
     }
+
+      @Deprecated
+    public Produto() {
+    }
 }

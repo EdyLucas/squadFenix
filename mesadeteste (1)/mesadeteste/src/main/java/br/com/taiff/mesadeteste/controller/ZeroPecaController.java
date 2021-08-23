@@ -1,5 +1,7 @@
 package br.com.taiff.mesadeteste.controller;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +21,14 @@ public class ZeroPecaController {
 	
 	@Autowired
 	private ZeroPecaRepository zeropecaRepository;
+
+	@PersistenceContext
+	EntityManager entityManager;
 	
 	@PostMapping
 	public ResponseEntity<?>zeroPeca(@RequestBody @Valid ZeroPecaRequest request){
 		
-		ZeroPeca zeroPeca = request.toModel();
+		ZeroPeca zeroPeca = request.toModel(entityManager);
 		
 		zeropecaRepository.save(zeroPeca);
 		
