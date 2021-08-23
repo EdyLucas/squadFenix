@@ -6,6 +6,7 @@ import javax.validation.constraints.NotBlank;
 import br.com.taiff.mesadeteste.model.Produto;
 import br.com.taiff.mesadeteste.model.ZeroPeca;
 import br.com.taiff.mesadeteste.validacao.CheckId;
+import br.com.taiff.mesadeteste.validacao.UniqueValue;
 
 public class ZeroPecaRequest {
 	
@@ -15,7 +16,7 @@ public class ZeroPecaRequest {
 	private int z;
 	private int r;
 
-	 @CheckId(Classe = Produto.class, campo = "id")
+    @UniqueValue(Classe = ZeroPeca.class, campo = "id")
 	private Long produto;
 
 	public ZeroPecaRequest(String modelo, int x, int y, int z, int r, Long produto) {

@@ -1,5 +1,7 @@
 package br.com.taiff.mesadeteste.model;
 
+import br.com.taiff.mesadeteste.validacao.UniqueValue;
+
 import javax.persistence.*;
 
 @Entity
