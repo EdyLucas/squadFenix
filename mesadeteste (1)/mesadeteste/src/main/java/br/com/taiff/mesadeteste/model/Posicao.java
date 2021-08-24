@@ -23,16 +23,45 @@ public class Posicao {
     
     @Column(nullable = false)
     private float tempo;
-    
-    @Column(nullable = false)
-    private String modelo;
- 
-    public Posicao(int eixoX, int eixoY, int eixoZ, float rotacao, float tempo, String modelo) {
+
+    @ManyToOne
+    private Produto produto;
+
+    public Posicao(int eixoX, int eixoY, int eixoZ, float rotacao, float tempo, Produto produto) {
         this.eixoX = eixoX;
         this.eixoY = eixoY;
         this.eixoZ = eixoZ;
         this.rotacao = rotacao;
         this.tempo = tempo;
-        this.modelo = modelo;
+        this.produto = produto;
+    }
+
+     @Deprecated
+    public Posicao() {
+    }
+
+    public int getEixoX() {
+        return eixoX;
+    }
+
+    public int getEixoY() {
+        return eixoY;
+    }
+
+    public int getEixoZ() {
+        return eixoZ;
+    }
+
+    public float getRotacao() {
+        return rotacao;
+    }
+
+    public float getTempo() {
+        return tempo;
+    }
+
+    public Produto getProduto() {
+        return produto;
     }
 }
+

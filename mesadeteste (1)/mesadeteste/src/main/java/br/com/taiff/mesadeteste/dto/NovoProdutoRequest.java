@@ -18,6 +18,8 @@ public class NovoProdutoRequest {
     }
 
 
+
+
     public Produto toModel() {
 
         return new Produto(this.nome, this.modelo);

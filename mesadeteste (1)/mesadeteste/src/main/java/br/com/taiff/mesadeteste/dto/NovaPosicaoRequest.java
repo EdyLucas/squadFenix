@@ -1,41 +1,40 @@
 package br.com.taiff.mesadeteste.dto;
 
 import br.com.taiff.mesadeteste.model.Posicao;
+import br.com.taiff.mesadeteste.model.Produto;
+import br.com.taiff.mesadeteste.model.ZeroPeca;
 
+import javax.persistence.EntityManager;
 import javax.validation.constraints.NotBlank;
 
 public class NovaPosicaoRequest {
 
-    @NotBlank
-    private int eixoX;
-    @NotBlank
-    private int eixoY;
-    @NotBlank
-    private int eixoZ;
-    @NotBlank
-    private float rotacao;
-    @NotBlank
-    private float tempo;
-    @NotBlank
-    private String modelo;
 
-    public NovaPosicaoRequest(int eixoX, 
-    		                  int eixoY, 
-    		                  int eixoZ, 
-    		                  float rotacao,
-    		                  float tempo,
-    						  String modelo
-    						  ) {
-    
+    private int eixoX;
+    private int eixoY;
+
+    private int eixoZ;
+
+    private float rotacao;
+
+    private float tempo;
+
+    private Long produto;
+
+    public NovaPosicaoRequest(int eixoX, int eixoY, int eixoZ, float rotacao, float tempo, Long produto) {
+        this.eixoX = eixoX;
+        this.eixoY = eixoY;
+        this.eixoZ = eixoZ;
+        this.rotacao = rotacao;
+        this.tempo = tempo;
+        this.produto = produto;
     }
-    public Posicao toModel() {
-        return new Posicao(
-	        		this.eixoX, 
-	        		this.eixoY, 
-	        		this.eixoZ, 
-	        		this.rotacao,
-	        		this.tempo,
-					this.modelo 
-        		          );
+
+
+    public Posicao toModel(EntityManager entityManager) {
+
+        Produto a = entityManager.find(Produto.class, produto);
+
+        return new Posicao( eixoX, eixoY, eixoZ, rotacao,tempo, a);
     }
 }
