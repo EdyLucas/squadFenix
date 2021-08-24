@@ -44,6 +44,11 @@ public class Posicao {
         return eixoX;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+
     public int getEixoY() {
         return eixoY;
     }

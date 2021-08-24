@@ -25,5 +25,15 @@ public class Produto {
     public Produto() {
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
 }
