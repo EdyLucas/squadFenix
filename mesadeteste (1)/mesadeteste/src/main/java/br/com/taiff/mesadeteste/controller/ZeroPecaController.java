@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import br.com.taiff.mesadeteste.repository.ZeroPecaRepository;
 import br.com.taiff.mesadeteste.dto.ZeroPecaRequest;
 import br.com.taiff.mesadeteste.model.ZeroPeca;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/zeropeca")
 public class ZeroPecaController {
