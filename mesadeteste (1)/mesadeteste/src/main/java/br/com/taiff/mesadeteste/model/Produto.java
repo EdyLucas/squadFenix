@@ -21,7 +21,7 @@ public class Produto {
         this.modelo = modelo;
     }
 
-      @Deprecated
+    @Deprecated
     public Produto() {
     }
 
