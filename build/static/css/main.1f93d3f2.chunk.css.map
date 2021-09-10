@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/table.css"],"names":[],"mappings":"AAAA,OACI,iBACJ,CACA,OACI,eAAgB,CAChB,qBACJ","file":"main.1f93d3f2.chunk.css","sourcesContent":[".title{\r\n    text-align: center;\r\n}\r\n.table{\r\n    margin-top: 15px;\r\n    background-color: gray;\r\n}"]}
