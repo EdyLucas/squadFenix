@@ -2,8 +2,6 @@ package br.com.taiff.mesadeteste.dto;
 
 import br.com.taiff.mesadeteste.model.Posicao;
 import br.com.taiff.mesadeteste.model.Produto;
-import br.com.taiff.mesadeteste.model.ZeroPeca;
-
 import javax.persistence.EntityManager;
 import javax.validation.constraints.NotBlank;
 
@@ -12,7 +10,6 @@ public class NovaPosicaoRequest {
 
     private int eixoX;
     private int eixoY;
-
     private int eixoZ;
 
     private float rotacao;
