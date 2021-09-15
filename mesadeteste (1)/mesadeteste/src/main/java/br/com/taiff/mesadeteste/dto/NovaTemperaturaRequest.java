@@ -4,9 +4,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotBlank;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import br.com.taiff.temperaturas.model.Temperatura;
+import br.com.taiff.mesadeteste.model.Temperatura;
 
 public class NovaTemperaturaRequest {
 
