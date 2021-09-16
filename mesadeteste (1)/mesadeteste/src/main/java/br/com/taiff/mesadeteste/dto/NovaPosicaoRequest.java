@@ -22,12 +22,12 @@ public class NovaPosicaoRequest {
     private Long produto;
 
     public NovaPosicaoRequest(int eixoX, int eixoY, int eixoZ, float rotacao, float tempo, Long produto) {
-        this.eixoX = eixoX;
-        this.eixoY = eixoY;
-        this.eixoZ = eixoZ;
-        this.rotacao = rotacao;
-        this.tempo = tempo;
-        this.produto = produto;
+            this.eixoX = eixoX;
+            this.eixoY = eixoY;
+            this.eixoZ = eixoZ;
+            this.rotacao = rotacao;
+            this.tempo = tempo;
+            this.produto = produto;
     }
 
 
