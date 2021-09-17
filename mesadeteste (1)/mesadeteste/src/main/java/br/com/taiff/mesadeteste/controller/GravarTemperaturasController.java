@@ -21,8 +21,7 @@ public class GravarTemperaturasController {
 
     @Autowired
     TemperaturaRepository temperaturaRepository;
-    @PersistenceContext
-    EntityManager entityManager;
+
 
     @PostMapping
     public ResponseEntity<?>gravarTemperatura(@RequestBody @Valid NovaTemperaturaRequest request){

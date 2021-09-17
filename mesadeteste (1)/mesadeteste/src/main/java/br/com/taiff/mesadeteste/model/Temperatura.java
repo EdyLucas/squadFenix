@@ -1,5 +1,6 @@
 package br.com.taiff.mesadeteste.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -16,27 +17,27 @@ public class Temperatura {
     private Long id;
 
     @Column(nullable = false)
-    private float t1;
+    private int t1;
 
     @Column(nullable = false)
-    private float t2;
+    private int t2;
     
     @Column(nullable = false)
-    private float t3;
+    private int t3;
     
     @Column(nullable = false)
-    private float tAmbiente;
+    private int tAmbiente;
     
-    @Column(nullable = false)
-    private Date dateTime;
+
+    private LocalDate dataTeste;
 
 
-    public Temperatura(float t1, float t2, float t3, float tAmbiente, Date dateTime) {
+    public Temperatura(int t1, int t2, int t3, int tAmbiente, LocalDate dataTeste) {
         this.t1 = t1;
         this.t2 = t2;
         this.t3 = t3;
         this.tAmbiente = tAmbiente;
-        this.dateTime = dateTime;
+        this.dataTeste = dataTeste;
     }
 
       @Deprecated
@@ -47,24 +48,24 @@ public class Temperatura {
         return id;
     }
 
-    public float getT1() {
+    public int getT1() {
         return t1;
     }
 
-    public float getT2() {
+    public int getT2() {
         return t2;
     }
     
-    public float getT3() {
+    public int getT3() {
         return t3;
     }
     
-    public float getTAmbiente() {
+    public int getTAmbiente() {
         return tAmbiente;
     }
-    
-    public Date getDateTime() {
-        return dateTime;
+
+    public LocalDate getDataTeste() {
+        return dataTeste;
     }
 }
 

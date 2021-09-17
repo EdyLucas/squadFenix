@@ -1,33 +1,33 @@
 package br.com.taiff.mesadeteste.dto;
 
+import java.time.LocalDate;
 import java.util.Date;
 
-import javax.validation.constraints.NotBlank;
 
 import br.com.taiff.mesadeteste.model.Temperatura;
 
 public class NovaTemperaturaRequest {
 
-    @NotBlank
-    private float t1;
 
-    @NotBlank
-    private float t2;
-    
-    @NotBlank
-    private float t3;
-    
-    @NotBlank
-    private float tAmbiente;
-    
-    private Date dateTime;
+    private int t1;
 
-    public NovaTemperaturaRequest(float t1, float t2, float t3, float tAmbiente, Date dateTime) {
+
+    private int t2;
+    
+
+    private int t3;
+    
+
+    private int tAmbiente;
+    
+    private LocalDate dataTeste;
+
+    public NovaTemperaturaRequest(int t1, int t2, int t3, int tAmbiente, LocalDate dataTeste) {
         this.t1 = t1;
         this.t2 = t2;
         this.t3 = t3;
         this.tAmbiente = tAmbiente;
-        this.dateTime = dateTime;
+        this.dataTeste = dataTeste;
     }
 
     public Temperatura toModel() {
@@ -36,7 +36,7 @@ public class NovaTemperaturaRequest {
                 this.t2,
                 this.t3,
                 this.tAmbiente,
-                this.dateTime
+                this.dataTeste
         		);
     }
     
