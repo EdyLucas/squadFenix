@@ -1,39 +1,46 @@
 package br.com.taiff.mesadeteste.dto;
 
-import javax.persistence.EntityManager;
-import javax.validation.constraints.NotBlank;
-
 import br.com.taiff.mesadeteste.model.Produto;
 import br.com.taiff.mesadeteste.model.ZeroPeca;
-import br.com.taiff.mesadeteste.validacao.CheckId;
+import br.com.taiff.mesadeteste.repository.ProdutoRepository;
+import br.com.taiff.mesadeteste.repository.ZeroPecaRepository;
 import br.com.taiff.mesadeteste.validacao.UniqueValue;
 
+import javax.management.RuntimeErrorException;
+
 public class ZeroPecaRequest {
-	
-	private String modelo;
-	private int x;
-	private int y;
-	private int z;
-	private int r;
 
-    @UniqueValue(Classe = ZeroPeca.class, campo = "id")
-	private Long produto;
+    private String modelo;
+    private int x;
+    private int y;
+    private int z;
+    private int r;
 
-	public ZeroPecaRequest(String modelo, int x, int y, int z, int r, Long produto) {
-		this.modelo = modelo;
-		this.x = x;
-		this.y = y;
-		this.z = z;
-		this.r = r;
-		this.produto = produto;
-	}
+    //@UniqueValue(Classe = ZeroPeca.class, campo = "produto")
+    private Long idProduto;
 
-	public ZeroPeca toModel(EntityManager entityManager) {
+    public ZeroPecaRequest(String modelo, int x, int y, int z, int r, Long idProduto) {
+        this.modelo = modelo;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.r = r;
+        this.idProduto = idProduto;
+    }
 
- Produto a = entityManager.find(Produto.class, produto);
-		
-		return new ZeroPeca( this.x, this.y, this.z, this.r, a);
-	}
-	
-	
+
+    public ZeroPeca toModel(ProdutoRepository produtoRepository, ZeroPecaRepository zeroPecaRepository) {
+        Produto produto = produtoRepository
+                .findById(this.idProduto)
+                .orElseThrow(() -> new RuntimeException("Produto não encontrado"));
+
+       boolean existeProduto = zeroPecaRepository.existsByProduto(produto);
+
+       if (existeProduto) {
+           throw new RuntimeException("já existe um zeropeça para esse produto");
+       }
+        return new ZeroPeca(this.x, this.y, this.z, this.r, produto);
+    }
+
+
 }

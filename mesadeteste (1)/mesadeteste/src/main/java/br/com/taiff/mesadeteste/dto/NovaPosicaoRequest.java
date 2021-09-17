@@ -35,3 +35,4 @@ public class NovaPosicaoRequest {
         return new Posicao( eixoX, eixoY, eixoZ, rotacao,tempo, a);
     }
 }
+

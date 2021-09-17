@@ -1,6 +1,5 @@
 package br.com.taiff.mesadeteste.model;
 
-import br.com.taiff.mesadeteste.validacao.UniqueValue;
 
 import javax.persistence.*;
 
@@ -37,5 +36,29 @@ public class ZeroPeca {
 
 	 @Deprecated
 	public ZeroPeca() {
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public int getZ() {
+		return z;
+	}
+
+	public int getR() {
+		return r;
+	}
+
+	public Produto getProduto() {
+		return produto;
 	}
 }
