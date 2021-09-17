@@ -1,19 +1,18 @@
 
 package br.com.taiff.mesadeteste.controller;
 
-import br.com.taiff.mesadeteste.dto.NovaPosicaoRequest;
-import br.com.taiff.mesadeteste.dto.NovoProdutoRequest;
-import br.com.taiff.mesadeteste.model.Posicao;
-import br.com.taiff.mesadeteste.model.Produto;
-import br.com.taiff.mesadeteste.repository.PosicaoRepository;
-import br.com.taiff.mesadeteste.repository.ProdutoRepository;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.validation.Valid;
+import br.com.taiff.mesadeteste.dto.NovaPosicaoRequest;
+import br.com.taiff.mesadeteste.model.Posicao;
+import br.com.taiff.mesadeteste.repository.PosicaoRepository;
+
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/gravarposicao")
