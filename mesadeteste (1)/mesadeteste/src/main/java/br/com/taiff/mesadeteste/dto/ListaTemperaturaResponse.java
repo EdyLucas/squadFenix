@@ -10,15 +10,15 @@ public class ListaTemperaturaResponse {
     private Long id;
 
 
-    private int t1;
+    private float t1;
 
-    private int t2;
-
-
-    private int t3;
+    private float t2;
 
 
-    private int tAmbiente;
+    private float t3;
+
+
+    private float tAmbiente;
 
 
     private LocalDate dataTeste;
@@ -40,19 +40,19 @@ public class ListaTemperaturaResponse {
         return id;
     }
 
-    public int getT1() {
+    public float getT1() {
         return t1;
     }
 
-    public int getT2() {
+    public float getT2() {
         return t2;
     }
 
-    public int getT3() {
+    public float getT3() {
         return t3;
     }
 
-    public int gettAmbiente() {
+    public float gettAmbiente() {
         return tAmbiente;
     }
 

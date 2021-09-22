@@ -4,11 +4,13 @@ import br.com.taiff.mesadeteste.dto.ListaTemperaturaResponse;
 import br.com.taiff.mesadeteste.model.Temperatura;
 import br.com.taiff.mesadeteste.repository.TemperaturaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 public class ListaTemperaturaController {
 

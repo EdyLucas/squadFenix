@@ -17,22 +17,22 @@ public class Temperatura {
     private Long id;
 
     @Column(nullable = false)
-    private int t1;
+    private float t1;
 
     @Column(nullable = false)
-    private int t2;
+    private float t2;
     
     @Column(nullable = false)
-    private int t3;
+    private float t3;
     
     @Column(nullable = false)
-    private int tAmbiente;
+    private float tAmbiente;
     
 
     private LocalDate dataTeste;
 
 
-    public Temperatura(int t1, int t2, int t3, int tAmbiente, LocalDate dataTeste) {
+    public Temperatura(float t1, float t2, float t3, float tAmbiente, LocalDate dataTeste) {
         this.t1 = t1;
         this.t2 = t2;
         this.t3 = t3;
@@ -48,19 +48,19 @@ public class Temperatura {
         return id;
     }
 
-    public int getT1() {
+    public float getT1() {
         return t1;
     }
 
-    public int getT2() {
+    public float getT2() {
         return t2;
     }
     
-    public int getT3() {
+    public float getT3() {
         return t3;
     }
     
-    public int getTAmbiente() {
+    public float getTAmbiente() {
         return tAmbiente;
     }
 
