@@ -67,5 +67,17 @@ public class Temperatura {
     public LocalDate getDataTeste() {
         return dataTeste;
     }
+
+    @Override
+    public String toString() {
+        return "Temperatura{" +
+                "id=" + id +
+                ", t1=" + t1 +
+                ", t2=" + t2 +
+                ", t3=" + t3 +
+                ", tAmbiente=" + tAmbiente +
+                ", dataTeste=" + dataTeste +
+                '}';
+    }
 }
 

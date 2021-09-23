@@ -5,6 +5,8 @@ import java.util.Date;
 
 
 import br.com.taiff.mesadeteste.model.Temperatura;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 
 public class NovaTemperaturaRequest {
 
@@ -39,6 +41,12 @@ public class NovaTemperaturaRequest {
                 this.dataTeste
         		);
     }
+
+    public Specification<Temperatura> toSpec() {
+        return (root,query, builder)->{
+            return builder.and();
+        };
+    }
     
     /*
     @Override
@@ -48,8 +56,8 @@ public class NovaTemperaturaRequest {
                 "Temperatura 2 ='" + t2 + '\'' +
                 "Temperatura 3 ='" + t3 + '\'' +
                 "Temperatura Ambiente ='" + tAmbiente + '\'' +
-                "Data do teste ='" + dataTime + '\'' +   
-                '}';           
+                "Data do teste ='" + dataTime + '\'' +
+                '}';
     }
     */
 }
