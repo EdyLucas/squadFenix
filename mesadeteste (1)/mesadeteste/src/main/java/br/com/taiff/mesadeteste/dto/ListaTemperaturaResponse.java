@@ -32,6 +32,7 @@ public class ListaTemperaturaResponse {
         tAmbiente = temperatura.getTAmbiente();
         dataTeste = temperatura.getDataTeste();
     }
+    
       public static List<ListaTemperaturaResponse> toModel(List<Temperatura>temperatura){
         return temperatura.stream().map(ListaTemperaturaResponse::new).collect(Collectors.toList());
       }
