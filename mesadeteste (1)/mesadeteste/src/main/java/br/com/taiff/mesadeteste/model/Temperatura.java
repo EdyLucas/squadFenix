@@ -38,7 +38,8 @@ public class Temperatura {
         this.t3 = t3;
         this.tAmbiente = tAmbiente;
         this.dataTeste = dataTeste;
-    }
+    };
+    
 
       @Deprecated
     public Temperatura() {
