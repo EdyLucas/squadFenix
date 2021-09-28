@@ -2,12 +2,9 @@ package br.com.taiff.mesadeteste.repository;
 
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
 
-import br.com.taiff.mesadeteste.dto.ListaTemperaturaResponse;
-import org.springframework.jca.cci.core.InteractionCallback;
 import org.springframework.stereotype.Repository;
 
 import br.com.taiff.mesadeteste.model.Temperatura;
@@ -22,7 +19,15 @@ public class MediaRepository {
 	}
 
 
+	float acumt1 = 0;
+	float acumt2 = 0;
+	float acumt3 = 0;
+    float acumt4 = 0;
 
+	/*private float mediaT1;
+	private float mediaT2;
+	private float mediaT3;
+	private float mediaT4;*/
 
 	public List<Temperatura> findJ1(Long id){
 		int n1 = 191;
@@ -151,7 +156,7 @@ public class MediaRepository {
 		
 	}*/
 
-	public ListaTemperaturaResponse findJanela(Long in, Long fin) {
+	public float[] findJanela(Long in, Long fin) {
 		Long n1 = in;
 		Long n2 = fin;
 
@@ -159,32 +164,43 @@ public class MediaRepository {
 
 		var q = em.createQuery(query, Temperatura.class);
 
-		float acumt1 = 0;
-		float acumt2 = 0;
-		float acumt3 = 0;
+
 
 
 		for (Temperatura t : q.getResultList()) {
 			acumt1 += t.getT1();
 			acumt2 += t.getT2();
 			acumt3 += t.getT3();
+			acumt4 += t.getTAmbiente();
 
 		}
 		int qtd = q.getResultList().size();
 		float mediaT1 = acumt1 / qtd;
-		float mediaT2 = acumt2 / qtd;
+		 float mediaT2 = acumt2 / qtd;
 		float mediaT3 = acumt3 / qtd;
+		float mediaT4 = acumt4/qtd;
 
-      ListaTemperaturaResponse listaTemperaturaResponse = new ListaTemperaturaResponse();
+       float[] temperaturaMedia = {mediaT1, mediaT2, mediaT3, mediaT4};
 
-
-		return listaTemperaturaResponse.getLista();
-
+           return temperaturaMedia;
 
 
 	}
 
 
+ /*	public float getMediaT1() {
+		return mediaT1;
+	}
 
+	public float getMediaT2() {
+		return mediaT2;
+	}
 
+	public float getMediaT3() {
+		return mediaT3;
+	}
+
+	public float getMediaT4() {
+		return mediaT4;
+	}*/
 }

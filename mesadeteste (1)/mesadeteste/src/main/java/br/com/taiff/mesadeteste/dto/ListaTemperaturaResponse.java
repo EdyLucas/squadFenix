@@ -24,7 +24,7 @@ public class ListaTemperaturaResponse {
 
     private LocalDate dataTeste;
 
-    private List<Float> lista = new ArrayList<>();
+
 
 
     public ListaTemperaturaResponse(Temperatura temperatura) {
@@ -67,12 +67,6 @@ public class ListaTemperaturaResponse {
         return dataTeste;
     }
 
-    public List<Float> getLista() {
-        return lista;
-    }
 
-    public void setLista(List<Float> lista) {
-        this.lista = lista;
-    }
 }
 
