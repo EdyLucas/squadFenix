@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 import javax.persistence.EntityManager;
 
+import br.com.taiff.mesadeteste.dto.ListaTemperaturaResponse;
+import org.springframework.jca.cci.core.InteractionCallback;
 import org.springframework.stereotype.Repository;
 
 import br.com.taiff.mesadeteste.model.Temperatura;
@@ -19,22 +21,30 @@ public class MediaRepository {
 		this.em = em;
 	}
 
+
+
+
 	public List<Temperatura> findJ1(Long id){
 		int n1 = 191;
 		int n2 = 274;
 		
-		String query = "select T.id from Temperatura T where T.id between " +n1+" and "+n2;
-		
+		String query = "select avg(t1) from temperatura T where T.id between 191 and 274";
+
+
+
+
 		var q = em.createQuery(query, Temperatura.class);
-		
+
+
+
 		return q.getResultList();
-		
+
 	}
-	
+
 	public List<Temperatura> findJ2(Long id){
 		int n1 = 345;
 		int n2 = 456;
-		
+
 		String query = "select T from Temperatura T where T.id between " +n1+" and "+n2;
 		
 		var q = em.createQuery(query, Temperatura.class);
@@ -129,7 +139,7 @@ public class MediaRepository {
 	}
 
 	
-	public List<Temperatura> findJ10(Long id){
+	/*public List<Temperatura> findJ10(Long id){
 		int n1 = 1687;
 		int n2 = 1807;
 		
@@ -139,7 +149,41 @@ public class MediaRepository {
 		
 		return q.getResultList();
 		
+	}*/
+
+	public ListaTemperaturaResponse findJanela(Long in, Long fin) {
+		Long n1 = in;
+		Long n2 = fin;
+
+		String query = "select T from Temperatura T where T.id between " + n1 + " and " + n2;
+
+		var q = em.createQuery(query, Temperatura.class);
+
+		float acumt1 = 0;
+		float acumt2 = 0;
+		float acumt3 = 0;
+
+
+		for (Temperatura t : q.getResultList()) {
+			acumt1 += t.getT1();
+			acumt2 += t.getT2();
+			acumt3 += t.getT3();
+
+		}
+		int qtd = q.getResultList().size();
+		float mediaT1 = acumt1 / qtd;
+		float mediaT2 = acumt2 / qtd;
+		float mediaT3 = acumt3 / qtd;
+
+      ListaTemperaturaResponse listaTemperaturaResponse = new ListaTemperaturaResponse();
+
+
+		return listaTemperaturaResponse.getLista();
+
+
+
 	}
+
 
 
 

@@ -3,6 +3,7 @@ package br.com.taiff.mesadeteste.dto;
 import br.com.taiff.mesadeteste.model.Temperatura;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,6 +24,8 @@ public class ListaTemperaturaResponse {
 
     private LocalDate dataTeste;
 
+    private List<Float> lista = new ArrayList<>();
+
 
     public ListaTemperaturaResponse(Temperatura temperatura) {
         id = temperatura.getId();
@@ -32,8 +35,11 @@ public class ListaTemperaturaResponse {
         tAmbiente = temperatura.getTAmbiente();
         dataTeste = temperatura.getDataTeste();
     }
-    
-      public static List<ListaTemperaturaResponse> toModel(List<Temperatura>temperatura){
+
+    public ListaTemperaturaResponse() {
+    }
+
+    public static List<ListaTemperaturaResponse> toModel(List<Temperatura>temperatura){
         return temperatura.stream().map(ListaTemperaturaResponse::new).collect(Collectors.toList());
       }
 
@@ -60,4 +66,13 @@ public class ListaTemperaturaResponse {
     public LocalDate getDataTeste() {
         return dataTeste;
     }
+
+    public List<Float> getLista() {
+        return lista;
+    }
+
+    public void setLista(List<Float> lista) {
+        this.lista = lista;
+    }
 }
+

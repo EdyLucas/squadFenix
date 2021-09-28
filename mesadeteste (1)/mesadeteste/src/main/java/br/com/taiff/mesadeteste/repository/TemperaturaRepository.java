@@ -11,4 +11,6 @@ import br.com.taiff.mesadeteste.model.Temperatura;
 public interface TemperaturaRepository extends JpaRepository<Temperatura, Long> {
 
     Optional<Temperatura> findById(Long id);
+
+
 }
