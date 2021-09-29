@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import br.com.taiff.mesadeteste.model.Janela;
 import org.springframework.stereotype.Repository;
 
 import br.com.taiff.mesadeteste.model.Temperatura;
@@ -156,7 +157,7 @@ public class MediaRepository {
 		
 	}*/
 
-	public float[] findJanela(Long in, Long fin) {
+	public Janela findJanela(Long in, Long fin) {
 		Long n1 = in;
 		Long n2 = fin;
 
@@ -168,21 +169,26 @@ public class MediaRepository {
 
 
 		for (Temperatura t : q.getResultList()) {
-			acumt1 += t.getT1();
-			acumt2 += t.getT2();
-			acumt3 += t.getT3();
-			acumt4 += t.getTAmbiente();
+			acumt1 =acumt1 + t.getT1();
+			acumt2 = acumt2 + t.getT2();
+			acumt3 = acumt3 + t.getT3();
+			acumt4 =acumt4 + t.getTAmbiente();
 
 		}
+
+
 		int qtd = q.getResultList().size();
 		float mediaT1 = acumt1 / qtd;
-		 float mediaT2 = acumt2 / qtd;
+		float mediaT2 = acumt2 / qtd;
 		float mediaT3 = acumt3 / qtd;
-		float mediaT4 = acumt4/qtd;
+		float mediaTA = acumt4/qtd;
+		Janela janela = new Janela(mediaT1, mediaT2, mediaT3, mediaTA);
+		acumt1 = 0;
+		acumt2 = 0;
+		acumt3 = 0;
+		acumt4 = 0;
+		return janela;
 
-       float[] temperaturaMedia = {mediaT1, mediaT2, mediaT3, mediaT4};
-
-           return temperaturaMedia;
 
 
 	}
