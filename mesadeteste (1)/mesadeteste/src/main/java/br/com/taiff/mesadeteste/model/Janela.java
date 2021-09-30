@@ -1,5 +1,7 @@
 package br.com.taiff.mesadeteste.model;
 
+import java.text.DecimalFormat;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,6 +13,7 @@ public class Janela {
     private float mediaT2 ;
     private float mediaT3;
     private float mediaTA;
+    private float mediaM;
     
     public Janela(Long id,float mediaT1, float mediaT2, float mediaT3, float mediaTA) {
     	this.id = id;
@@ -20,16 +23,18 @@ public class Janela {
         this.mediaTA = mediaTA;
     }
 
-    public float getMediaM() {
-        return (mediaT1 + mediaT2 + mediaT3)/3;
+    public String getMediaM() {
+    	this.mediaM = (mediaT1 + mediaT2 + mediaT3)/3;
+        return new DecimalFormat(".#").format(mediaM);
     }
 
-    public float getMediaCor() {
-        return (getMediaM()+mediaTA -25);
+    public String getMediaCor() {
+    	float mediaCor = (mediaM + mediaTA -25);
+        return new DecimalFormat(".#").format(mediaCor);
     }
 
-    public float getMediaT1() {
-        return mediaT1;
+    public String getMediaT1() {
+        return new DecimalFormat(".#").format(mediaT1);
     }
 
     public Long getId() {
@@ -40,24 +45,24 @@ public class Janela {
         this.mediaT1 = mediaT1;
     }
 
-    public float getMediaT2() {
-        return mediaT2;
+    public String getMediaT2() {
+        return new DecimalFormat(".#").format(mediaT2);
     }
 
     public void setMediaT2(float mediaT2) {
         this.mediaT2 = mediaT2;
     }
 
-    public float getMediaT3() {
-        return mediaT3;
+    public String getMediaT3() {
+        return new DecimalFormat(".#").format(mediaT3);
     }
 
     public void setMediaT3(float mediaT3) {
         this.mediaT3 = mediaT3;
     }
 
-    public float getMediaTA() {
-        return mediaTA;
+    public String getMediaTA() {
+        return new DecimalFormat(".#").format(mediaTA);
     }
 
     public void setMediaTA(float mediaTA) {
