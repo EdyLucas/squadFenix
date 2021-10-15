@@ -1,7 +1,7 @@
 package br.com.taiff.mesadeteste.dto;
 
 import br.com.taiff.mesadeteste.model.Posicao;
-import br.com.taiff.mesadeteste.model.Produto;
+import br.com.taiff.mesadeteste.model.Teste;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 public class ListaPosicoesResponse {
 
     private  Long id;
+
+    private String descricao;
 
     private int eixoX;
 
@@ -25,7 +27,9 @@ public class ListaPosicoesResponse {
     private float tempo;
 
 
-    private Produto produto;
+    private Teste produto;
+
+
 
     public ListaPosicoesResponse(Posicao posicao) {
         id = posicao.getId();
@@ -34,7 +38,9 @@ public class ListaPosicoesResponse {
         eixoZ = posicao.getEixoZ();
         rotacao = posicao.getRotacao();
         tempo = posicao.getTempo();
-        produto = posicao.getProduto();
+        produto = posicao.getTeste();
+
+
 
 
     }
@@ -46,6 +52,10 @@ public class ListaPosicoesResponse {
 
     public Long getId() {
         return id;
+    }
+
+    public String getDescricao() {
+        return descricao;
     }
 
     public int getEixoX() {
@@ -68,7 +78,9 @@ public class ListaPosicoesResponse {
         return tempo;
     }
 
-    public Produto getProduto() {
+    public Teste getProduto() {
         return produto;
     }
+
+
 }

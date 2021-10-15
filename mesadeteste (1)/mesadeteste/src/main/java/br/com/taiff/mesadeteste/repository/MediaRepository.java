@@ -25,10 +25,7 @@ public class MediaRepository {
 	float acumt3 = 0;
     float acumt4 = 0;
 
-	/*private float mediaT1;
-	private float mediaT2;
-	private float mediaT3;
-	private float mediaT4;*/
+
 
 	public List<Temperatura> findJ1(Long id){
 		int n1 = 191;
@@ -36,12 +33,7 @@ public class MediaRepository {
 		
 		String query = "select avg(t1) from temperatura T where T.id between 191 and 274";
 
-
-
-
 		var q = em.createQuery(query, Temperatura.class);
-
-
 
 		return q.getResultList();
 
@@ -194,19 +186,5 @@ public class MediaRepository {
 	}
 
 
- /*	public float getMediaT1() {
-		return mediaT1;
-	}
 
-	public float getMediaT2() {
-		return mediaT2;
-	}
-
-	public float getMediaT3() {
-		return mediaT3;
-	}
-
-	public float getMediaT4() {
-		return mediaT4;
-	}*/
 }
