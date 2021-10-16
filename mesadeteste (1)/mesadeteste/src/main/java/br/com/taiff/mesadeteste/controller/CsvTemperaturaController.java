@@ -19,7 +19,7 @@ public class CsvTemperaturaController {
     @RequestMapping(path = "/temperaturacsv")
     public void getAllEmployeesInCsv(HttpServletResponse servletResponse) throws IOException {
         servletResponse.setContentType("text/csv");
-        servletResponse.addHeader("Content-Disposition","attachment; filename=\"employees.csv\"");
+        servletResponse.addHeader("Content-Disposition","attachment; filename=\"temperaturas.csv\"");
         csvExportService.writeEmployeesToCsv(servletResponse.getWriter());
     }
 
