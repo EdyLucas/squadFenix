@@ -1,5 +1,7 @@
 package br.com.taiff.mesadeteste.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -24,19 +26,24 @@ public class Posicao {
     @Column(nullable = false)
     private float tempo;
 
+    @JsonIgnore
     @ManyToOne
-    private Produto produto;
+    private Teste teste;
+    
 
-    public Posicao(int eixoX, int eixoY, int eixoZ, float rotacao, float tempo, Produto produto) {
+
+    public Posicao( int eixoX, int eixoY, int eixoZ, float rotacao, float tempo, Teste teste) {
+
         this.eixoX = eixoX;
         this.eixoY = eixoY;
         this.eixoZ = eixoZ;
         this.rotacao = rotacao;
         this.tempo = tempo;
-        this.produto = produto;
+        this.teste = teste;
+
     }
 
-     @Deprecated
+    @Deprecated
     public Posicao() {
     }
 
@@ -65,8 +72,12 @@ public class Posicao {
         return tempo;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public Teste getTeste() {
+        return teste;
     }
+
+
+
+
 }
 

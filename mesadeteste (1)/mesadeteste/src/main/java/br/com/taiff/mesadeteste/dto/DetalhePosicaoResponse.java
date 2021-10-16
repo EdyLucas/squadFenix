@@ -1,7 +1,7 @@
 package br.com.taiff.mesadeteste.dto;
 
 import br.com.taiff.mesadeteste.model.Posicao;
-import br.com.taiff.mesadeteste.model.Produto;
+import br.com.taiff.mesadeteste.model.Teste;
 
 
 
@@ -23,7 +23,7 @@ public class DetalhePosicaoResponse {
     private float tempo;
 
 
-    private Produto produto;
+    private Teste produto;
 
     public DetalhePosicaoResponse(Posicao posicao) {
         eixoX =posicao.getEixoX();
@@ -31,7 +31,7 @@ public class DetalhePosicaoResponse {
         eixoZ = posicao.getEixoZ();
         rotacao = posicao.getRotacao();
         tempo = posicao.getTempo();
-        produto = posicao.getProduto();
+        produto = posicao.getTeste();
     }
 
     public int getEixoX() {
@@ -54,7 +54,7 @@ public class DetalhePosicaoResponse {
         return tempo;
     }
 
-    public Produto getProduto() {
+    public Teste getProduto() {
         return produto;
     }
 }
