@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/gravaproduto")
+@RequestMapping("/gravarteste")
 public class TesteController {
 
      @Autowired
